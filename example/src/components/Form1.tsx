@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useWindowControls } from '../hooks/useWindowControls';
 
 const Form1: React.FC = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm({
     defaultValues: {
       example: '',
@@ -13,10 +15,13 @@ const Form1: React.FC = () => {
     },
   });
 
+  useWindowControls('example-form-1', control);
+
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log('data:', data);
+        console.log('data1:', data);
+        console.log('control1:', control);
       })}
     >
       <label>Example</label>
