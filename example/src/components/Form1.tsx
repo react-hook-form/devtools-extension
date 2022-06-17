@@ -1,6 +1,6 @@
+import { useWindowControls } from '../hooks/useWindowControls';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useWindowControls } from '../hooks/useWindowControls';
 
 const Form1: React.FC = () => {
   const {
