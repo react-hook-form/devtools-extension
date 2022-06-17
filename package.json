@@ -9,6 +9,7 @@
     "postinstall": "simple-git-hooks",
     "dev": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js",
+    "clean": "rimraf dist",
     "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
   },
@@ -30,6 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "lint-staged": "^13.0.2",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "simple-git-hooks": "^2.8.0",
     "ts-loader": "^9.3.0",
     "typescript": "^4.7.3",
