@@ -4,8 +4,10 @@ const CopyPlugin = require('copy-webpack-plugin');
 /** @type { import('webpack').Configuration } */
 module.exports = {
   entry: {
-    background: './src/background.ts',
+    index: './src/index.ts',
     devtools: './src/devtools.tsx',
+    popup: './src/popup.tsx',
+    background: './src/background.ts',
     content: './src/content.ts',
   },
   output: {
