@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "RHF Devtools",
+  "name": "React Hook Form Devtools",
   "version": "0.0.0",
   "description": "React Hook Form DevTools to help debug forms with validation.",
   "action": {
