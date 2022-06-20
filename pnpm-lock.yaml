@@ -7,6 +7,7 @@ specifiers:
   '@types/react-dom': ^18.0.5
   '@typescript-eslint/eslint-plugin': ^5.28.0
   '@typescript-eslint/parser': ^5.28.0
+  clsx: ^1.1.1
   copy-webpack-plugin: ^11.0.0
   css-loader: ^6.7.1
   eslint: ^8.17.0
@@ -29,6 +30,7 @@ specifiers:
   webpack-merge: ^5.8.0
 
 dependencies:
+  clsx: 1.1.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.32.2_react@18.2.0
@@ -993,6 +995,11 @@ packages:
       kind-of: 6.0.3
       shallow-clone: 3.0.1
     dev: true
+
+  /clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

@@ -1,0 +1,30 @@
+@import './colors.css';
+
+.topButton {
+  width: 50%;
+  height: 28px;
+}
+
+.topButtonGroup {
+  display: flex;
+  gap: 1px;
+  background-color: var(--primary);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.middle {
+  overflow: auto;
+  flex-grow: 1;
+  margin-block: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 16px);
+}

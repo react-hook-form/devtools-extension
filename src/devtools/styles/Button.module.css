@@ -1,0 +1,22 @@
+@import './colors.css';
+
+.button {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  color: white;
+  font-size: 11px;
+  background-color: var(--blue);
+  transition: 0.2s all;
+  text-transform: none;
+}
+
+.button:hover {
+  background-color: var(--light-blue);
+}
+
+.button:active {
+  transition: 0.3s all;
+  transform: translateY(2px);
+  opacity: 0.8;
+}

@@ -1,0 +1,27 @@
+@import './colors.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--button-blue);
+  color: white;
+  font-size: 14px;
+  margin: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}

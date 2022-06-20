@@ -1,0 +1,29 @@
+@import './colors.css';
+
+.collapseButton {
+  width: 24px;
+}
+
+.isNativeButton {
+  width: 60px;
+}
+
+.button {
+  border: 1px solid var(--light-blue);
+  height: 24px;
+}
+
+.field {
+  display: flex;
+  gap: 10px;
+}
+
+.fieldInfo {
+  padding: 16px 10px;
+  border-bottom: 1px dashed var(--secondary);
+  transition: 0.3s;
+}
+
+.fieldInfo:hover {
+  background-color: var(--primary);
+}

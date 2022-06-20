@@ -1,0 +1,16 @@
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.infoKey {
+  text-transform: capitalize;
+  font-weight: bold;
+}
