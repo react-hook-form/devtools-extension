@@ -5,8 +5,8 @@
   "description": "React Hook Form DevTools to help debug forms with validation.",
   "action": {
     "default_icon": {
-      "16": "images/icon16.png",
-      "32": "images/icon32.png"
+      "16": "images/icon16-gray.png",
+      "32": "images/icon32-gray.png"
     },
     "default_popup": "popup.html"
   },
