@@ -17,7 +17,7 @@ const FieldInfo: React.FC<FieldInfoProps> = ({
   isNative,
   info,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <div
@@ -32,7 +32,7 @@ const FieldInfo: React.FC<FieldInfoProps> = ({
             className={clsx(styles.button, styles.collapseButton)}
             onClick={() => setIsCollapsed((perv) => !perv)}
           >
-            {isCollapsed ? '-' : '+'}
+            {isCollapsed ? '+' : '-'}
           </Button>
           <Button className={clsx(styles.button, styles.isNativeButton)}>
             {isNative ? 'Native' : 'Custom'}
@@ -40,7 +40,7 @@ const FieldInfo: React.FC<FieldInfoProps> = ({
         </div>
         <div className={styles.name}>{name}</div>
       </div>
-      {isCollapsed && <Info info={info} />}
+      {!isCollapsed && <Info info={info} />}
     </div>
   );
 };
