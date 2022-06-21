@@ -21,12 +21,14 @@ const Devtools: React.FC = () => {
       <div className={styles.middle}>
         <FieldInfo
           name="field1"
-          requiredInfo={{ hasError: false, isNative: true }}
+          hasError={false}
+          isNative
           info={{ type: 'text', touched: true }}
         />
         <FieldInfo
           name="field2"
-          requiredInfo={{ hasError: true, isNative: false }}
+          hasError
+          isNative={false}
           info={{ touched: true, dirty: true }}
         />
       </div>
