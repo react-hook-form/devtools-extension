@@ -1,16 +1,5 @@
 @import './colors.css';
 
-.topButton {
-  width: 50%;
-  height: 28px;
-}
-
-.topButtonGroup {
-  display: flex;
-  gap: 1px;
-  background-color: var(--primary);
-}
-
 .top {
   display: flex;
   flex-direction: column;
