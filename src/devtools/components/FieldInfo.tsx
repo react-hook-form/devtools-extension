@@ -1,6 +1,6 @@
 import styles from '../styles/FieldInfo.module.css';
 import Button from './Button';
-import Info from './Info';
+import Info, { InfoValues } from './Info';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
@@ -8,7 +8,7 @@ interface FieldInfoProps {
   name: string;
   hasError: boolean;
   isNative: boolean;
-  info: Record<string, string | boolean | number>;
+  info: InfoValues;
 }
 
 const FieldInfo: React.FC<FieldInfoProps> = ({

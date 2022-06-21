@@ -23,7 +23,7 @@ const Devtools: React.FC = () => {
           name="field1"
           hasError={false}
           isNative
-          info={{ type: 'text', touched: true }}
+          info={{ type: 'text', touched: true, nestedObject: { lol: 'olo' } }}
         />
         <FieldInfo
           name="field2"

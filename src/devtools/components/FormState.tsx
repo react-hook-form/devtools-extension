@@ -1,10 +1,10 @@
 import styles from '../styles/FormState.module.css';
 import Button from './Button';
-import Info from './Info';
+import Info, { InfoValues } from './Info';
 import React, { useState } from 'react';
 
 const FormState: React.FC<{
-  state: { valid: boolean } & Record<string, string | boolean | number>;
+  state: { valid: boolean } & InfoValues;
 }> = ({ state }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
