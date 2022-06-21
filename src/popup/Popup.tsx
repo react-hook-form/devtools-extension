@@ -18,7 +18,7 @@ const Popup: React.FC<{ enable: boolean }> = ({ enable }) => {
       <div>
         Need help? Create an issue or discussion{' '}
         <a
-          href="https://github.com/react-hook-form/devtools-extension"
+          href="https://github.com/react-hook-form/react-hook-form"
           target="_blank"
         >
           here
