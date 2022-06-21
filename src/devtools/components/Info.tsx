@@ -23,7 +23,9 @@ const Info: React.FC<{ info: InfoValues }> = ({ info }) => {
       {Object.entries(info).map(([key, value]) => (
         <div className={styles.info}>
           <div className={styles.infoKey}>{key}:</div>
-          <InfoValue value={value} />
+          <div className={styles.infoValue}>
+            <InfoValue value={value} />
+          </div>
         </div>
       ))}
     </div>

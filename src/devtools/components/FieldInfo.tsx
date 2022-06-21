@@ -26,17 +26,19 @@ const FieldInfo: React.FC<FieldInfoProps> = ({
         borderLeft: `2px solid ${hasError ? '#bf1650' : '#191d3a'}`,
       }}
     >
-      <div className={styles.field}>
-        <Button
-          className={clsx(styles.button, styles.collapseButton)}
-          onClick={() => setIsCollapsed((perv) => !perv)}
-        >
-          {isCollapsed ? '-' : '+'}
-        </Button>
-        <Button className={clsx(styles.button, styles.isNativeButton)}>
-          {isNative ? 'Native' : 'Custom'}
-        </Button>
-        <div style={{ paddingTop: 2 }}>{name}</div>
+      <div className={styles.actionsAndName}>
+        <div className={styles.actions}>
+          <Button
+            className={clsx(styles.button, styles.collapseButton)}
+            onClick={() => setIsCollapsed((perv) => !perv)}
+          >
+            {isCollapsed ? '-' : '+'}
+          </Button>
+          <Button className={clsx(styles.button, styles.isNativeButton)}>
+            {isNative ? 'Native' : 'Custom'}
+          </Button>
+        </div>
+        <div className={styles.name}>{name}</div>
       </div>
       {isCollapsed && <Info info={info} />}
     </div>

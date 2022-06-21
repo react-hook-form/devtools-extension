@@ -13,9 +13,19 @@
   height: 24px;
 }
 
-.field {
+.actionsAndName {
   display: flex;
-  gap: 10px;
+}
+
+.actions {
+  width: 50%;
+  display: flex;
+  gap: 8px;
+}
+
+.name {
+  width: 50%;
+  padding-top: 2px;
 }
 
 .fieldInfo {

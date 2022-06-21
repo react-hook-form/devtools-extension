@@ -2,15 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-block: 4px;
 }
 
 .info {
   display: flex;
   gap: 8px;
-  justify-content: center;
 }
 
 .infoKey {
-  text-transform: capitalize;
+  width: 50%;
+  text-align: end;
   font-weight: bold;
+  text-transform: capitalize;
+}
+
+.infoValue {
+  width: 50%;
 }
