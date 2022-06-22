@@ -1,4 +1,4 @@
-import FieldInfo from './components/FieldInfo';
+import FieldState from './components/FieldState';
 import FormIdSelector from './components/FormIdSelector';
 import FormState from './components/FormState';
 import Input from './components/Input';
@@ -14,17 +14,17 @@ const Devtools: React.FC = () => {
         <Input placeholder="Filter name..." />
       </div>
       <div className={styles.middle}>
-        <FieldInfo
+        <FieldState
           name="field1"
           hasError={false}
           isNative
-          info={{ type: 'text', touched: true, nestedObject: { lol: 'olo' } }}
+          state={{ type: 'text', touched: true, nestedObject: { lol: 'olo' } }}
         />
-        <FieldInfo
+        <FieldState
           name="field2"
           hasError
           isNative={false}
-          info={{ touched: true, dirty: true }}
+          state={{ touched: true, dirty: true }}
         />
       </div>
       <div>

@@ -1,10 +1,10 @@
 import styles from '../styles/FormState.module.css';
 import Button from './Button';
-import Info, { InfoValues } from './Info';
+import State, { StateFields } from './State';
 import React, { useState } from 'react';
 
 const FormState: React.FC<{
-  state: { valid: boolean } & InfoValues;
+  state: { valid: boolean } & StateFields;
 }> = ({ state }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -12,7 +12,7 @@ const FormState: React.FC<{
     <>
       {isCollapsed && (
         <div className={styles.state}>
-          <Info info={state} />
+          <State state={state} />
         </div>
       )}
       <Button

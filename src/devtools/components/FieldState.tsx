@@ -1,27 +1,27 @@
-import styles from '../styles/FieldInfo.module.css';
+import styles from '../styles/FieldState.module.css';
 import Button from './Button';
-import Info, { InfoValues } from './Info';
+import State, { StateFields } from './State';
 import clsx from 'clsx';
 import React, { useState } from 'react';
 
-interface FieldInfoProps {
+interface FieldStateProps {
   name: string;
   hasError: boolean;
   isNative: boolean;
-  info: InfoValues;
+  state: StateFields;
 }
 
-const FieldInfo: React.FC<FieldInfoProps> = ({
+const FieldState: React.FC<FieldStateProps> = ({
   name,
   hasError,
   isNative,
-  info,
+  state,
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
     <div
-      className={styles.fieldInfo}
+      className={styles.fieldState}
       style={{
         borderLeft: `2px solid ${hasError ? '#bf1650' : '#191d3a'}`,
       }}
@@ -40,9 +40,9 @@ const FieldInfo: React.FC<FieldInfoProps> = ({
         </div>
         <div className={styles.name}>{name}</div>
       </div>
-      {!isCollapsed && <Info info={info} />}
+      {!isCollapsed && <State state={state} />}
     </div>
   );
 };
 
-export default FieldInfo;
+export default FieldState;

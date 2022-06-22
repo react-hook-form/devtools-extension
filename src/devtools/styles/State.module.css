@@ -1,22 +1,22 @@
-.infos {
+.states {
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin-block: 4px;
 }
 
-.info {
+.state {
   display: flex;
   gap: 8px;
 }
 
-.infoKey {
+.stateKey {
   width: 50%;
   text-align: end;
   font-weight: bold;
   text-transform: capitalize;
 }
 
-.infoValue {
+.stateValue {
   width: 50%;
 }

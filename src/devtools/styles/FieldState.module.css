@@ -28,12 +28,12 @@
   padding-top: 2px;
 }
 
-.fieldInfo {
+.fieldState {
   padding: 16px 10px;
   border-bottom: 1px dashed var(--secondary);
   transition: 0.3s;
 }
 
-.fieldInfo:hover {
+.fieldState:hover {
   background-color: var(--primary);
 }
