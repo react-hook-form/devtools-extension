@@ -21,7 +21,7 @@ const State: React.FC<{ state: StateFields }> = ({ state }) => {
   return (
     <div className={styles.states}>
       {Object.entries(state).map(([key, value]) => (
-        <div className={styles.state}>
+        <div className={styles.state} key={key}>
           <div className={styles.stateKey}>{key}:</div>
           <div className={styles.stateValue}>
             <StateValue value={value} />
