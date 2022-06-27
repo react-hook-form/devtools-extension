@@ -1,7 +1,15 @@
+import { sendExtensionOneTimeMessage } from '../services/extension';
 import styles from './Popup.module.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Popup: React.FC<{ enable: boolean }> = ({ enable }) => {
+const Popup: React.FC = () => {
+  const [enable, setEnable] = useState(false);
+  useEffect(() => {
+    sendExtensionOneTimeMessage('get-enable-status', (response) => {
+      setEnable(response.enabled);
+    });
+  }, []);
+
   return (
     <div className={styles.main}>
       <div className={styles.notice}>

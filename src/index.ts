@@ -1,9 +1,11 @@
-import { enable } from './mock-data';
+import { sendExtensionOneTimeMessage } from './services/extension';
 
-if (enable) {
-  chrome.devtools.panels.create(
-    '📋 React Hook Form',
-    'images/icon64.png',
-    'devtools.html',
-  );
-}
+sendExtensionOneTimeMessage('get-enable-status', (response) => {
+  if (response.enabled) {
+    chrome.devtools.panels.create(
+      '📋 React Hook Form',
+      'images/icon64.png',
+      'devtools.html',
+    );
+  }
+});

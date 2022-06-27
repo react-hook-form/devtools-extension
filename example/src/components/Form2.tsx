@@ -1,4 +1,4 @@
-import { useWindowControls } from '../hooks/useWindowControls';
+import { useExportControls } from '../hooks/useExportControls';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -17,13 +17,12 @@ const Form2: React.FC = () => {
     },
   });
 
-  useWindowControls('example-form-2', control);
+  useExportControls('example-form-2', control);
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
-        console.log('data2:', data);
-        console.log('control2:', control);
+      onSubmit={handleSubmit(() => {
+        return;
       })}
     >
       <label>First Name</label>
