@@ -2,8 +2,19 @@ import {
   addExtensionMessageListener,
   addExtensionOneTimeMessageListener,
 } from './services/extension';
+import { UpdatePayload } from './typings/webpage-message';
 
 let enabledTab = new Set<number>();
+let tabData = new Map<number, Record<string, UpdatePayload['data']>>();
+
+const removeTab = (tabId: number) => {
+  if (enabledTab.has(tabId)) {
+    enabledTab.delete(tabId);
+  }
+  if (tabData.has(tabId)) {
+    tabData.delete(tabId);
+  }
+};
 
 chrome.tabs.onUpdated.addListener((tabId) => {
   addExtensionMessageListener((message) => {
@@ -16,15 +27,19 @@ chrome.tabs.onUpdated.addListener((tabId) => {
         });
         break;
       }
+      case 'UPDATE': {
+        if (tabData.has(tabId)) {
+          tabData.get(tabId)![message.payload.id] = message.payload.data;
+        } else {
+          tabData.set(tabId, { [message.payload.id]: message.payload.data });
+        }
+        break;
+      }
     }
   });
 });
 
-chrome.tabs.onRemoved.addListener((tabId) => {
-  if (enabledTab.has(tabId)) {
-    enabledTab.delete(tabId);
-  }
-});
+chrome.tabs.onRemoved.addListener((tabId) => removeTab(tabId));
 
 addExtensionOneTimeMessageListener((request, _, sendResponse) => {
   switch (request.type) {
@@ -32,6 +47,10 @@ addExtensionOneTimeMessageListener((request, _, sendResponse) => {
       if (enabledTab.has(request.tabId)) {
         sendResponse({ enabled: true });
       }
+      break;
+    }
+    case 'get-devtool-data': {
+      sendResponse({ data: tabData.get(request.tabId)! });
       break;
     }
   }

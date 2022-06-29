@@ -1,4 +1,4 @@
-type UpdatePayload = {
+export type UpdatePayload = {
   id: string;
   data: {
     formValues: Record<string, any>;

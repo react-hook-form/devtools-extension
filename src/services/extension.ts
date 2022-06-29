@@ -21,15 +21,14 @@ export const addExtensionMessageListener = (
 export const sendExtensionOneTimeMessage = <
   TMessageType extends keyof ExtensionMessageResponse,
 >(
+  tabId: number,
   type: TMessageType,
   responseCallback?: (response: ExtensionMessageResponse[TMessageType]) => void,
 ) => {
-  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
-    chrome.runtime.sendMessage({ type, tabId: tab.id! }, (response) => {
-      if (responseCallback) {
-        responseCallback(response);
-      }
-    });
+  chrome.runtime.sendMessage({ type, tabId }, (response) => {
+    if (responseCallback) {
+      responseCallback(response);
+    }
   });
 };
 

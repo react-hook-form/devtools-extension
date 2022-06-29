@@ -5,8 +5,10 @@ import React, { useEffect, useState } from 'react';
 const Popup: React.FC = () => {
   const [enable, setEnable] = useState(false);
   useEffect(() => {
-    sendExtensionOneTimeMessage('get-enable-status', (response) => {
-      setEnable(response.enabled);
+    chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
+      sendExtensionOneTimeMessage(tab.id!, 'get-enable-status', (response) => {
+        setEnable(response.enabled);
+      });
     });
   }, []);
 
