@@ -1,56 +1,66 @@
-import { sendExtensionOneTimeMessage } from '../services/extension';
-import { UpdatePayload } from '../typings/webpage-message';
 import FieldState from './components/FieldState';
 import FormIdSelector from './components/FormIdSelector';
 import FormState from './components/FormState';
 import Input from './components/Input';
+import { useGetData } from './helpers/get-data';
 import styles from './styles/Devtools.module.css';
 import './styles/global.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const Devtools: React.FC = () => {
-  const [data, setData] = useState<Record<string, UpdatePayload['data']>>({});
+  const data = useGetData();
 
-  const getData = () => {
-    sendExtensionOneTimeMessage(
-      chrome.devtools.inspectedWindow.tabId,
-      'get-devtool-data',
-      (response) => {
-        setData(response.data);
-      },
+  const [formId, setFormId] = useState('');
+  const [filteredFieldName, setFilteredFieldName] = useState('');
+
+  if (!data[formId]) {
+    return (
+      <div className={styles.main}>
+        <FormIdSelector
+          ids={['Select a ID...', ...Object.keys(data)]}
+          id={formId}
+          onChange={setFormId}
+        />
+        <h1 style={{ textAlign: 'center' }}>Please Select a Form ID</h1>
+      </div>
     );
-  };
-
-  useEffect(() => {
-    getData();
-    const intervalId = setInterval(getData, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+  }
 
   return (
     <div className={styles.main}>
       <div className={styles.top}>
-        <FormIdSelector ids={Object.keys(data)} />
-        <Input placeholder="Filter name..." />
+        <FormIdSelector
+          ids={Object.keys(data)}
+          id={formId}
+          onChange={setFormId}
+        />
+        <Input
+          placeholder="Filter name..."
+          value={filteredFieldName}
+          onChange={setFilteredFieldName}
+        />
       </div>
       <div className={styles.middle}>
-        <FieldState
-          name="field1"
-          hasError={false}
-          isNative
-          state={{ type: 'text', touched: true, nestedObject: { lol: 'olo' } }}
-        />
-        <FieldState
-          name="field2"
-          hasError
-          isNative={false}
-          state={{ touched: true, dirty: true }}
-        />
+        {Object.keys(data[formId].formValues)
+          .filter((fieldName) =>
+            fieldName.toLowerCase().includes(filteredFieldName.toLowerCase()),
+          )
+          .map((fieldName) => (
+            <FieldState
+              key={fieldName}
+              name={fieldName}
+              hasError={false}
+              isNative
+              state={{
+                value: data[formId].formValues[fieldName],
+                touched: !!data[formId].formState.touchedFields[fieldName],
+                dirty: !!data[formId].formState.dirtyFields[fieldName],
+              }}
+            />
+          ))}
       </div>
       <div>
-        <FormState
-          state={{ valid: false, submitted: false, count: 1, errors: 0 }}
-        />
+        <FormState state={data[formId].formState as any} />
       </div>
     </div>
   );
