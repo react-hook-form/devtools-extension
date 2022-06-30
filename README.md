@@ -57,8 +57,10 @@ sequenceDiagram
   Note right of Background: Cache enabled tab
   par
     Popup->>Background: get-enable-status
+    Background-->>Popup: Enable Status (Callback)
   and
     Devtools->>Background: get-enable-status
+    Background-->>Devtools: Enable Status (Callback)
   end
   loop
     Webpage->>Content Script: UPDATE
