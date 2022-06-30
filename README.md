@@ -39,3 +39,35 @@ pnpm run dev
 4. Enable **Developer mode**
 
 5. Click **Load unpacked** button and select `/dist`
+
+### Messaging Flow
+
+```mermaid
+sequenceDiagram
+  participant Webpage
+  participant Content Script
+  participant Background
+  participant Popup
+  participant Devtools
+  Content Script->>Webpage: INIT
+  Note left of Webpage: Browser is using devtool
+  Webpage->>Content Script: WELCOME
+  Content Script->>Background: WELCOME
+  Note right of Background: Webpage is using rhf
+  Note right of Background: Cache enabled tab
+  par
+    Popup->>Background: get-enable-status
+  and
+    Devtools->>Background: get-enable-status
+  end
+  loop
+    Webpage->>Content Script: UPDATE
+    Content Script->>Background: UPDATE
+    Note over Webpage,Background: Data
+  end
+  Note right of Background: Cache data
+  loop Every 100ms
+    Devtools->>Background: get-devtool-data
+    Background-->>Devtools: Data (Callback)
+  end
+```
