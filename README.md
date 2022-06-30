@@ -47,8 +47,8 @@ sequenceDiagram
   participant Webpage
   participant Content Script
   participant Background
-  participant Popup
   participant Devtools
+  participant Popup
   Content Script->>Webpage: INIT
   Note left of Webpage: Browser is using devtool
   Webpage->>Content Script: WELCOME
