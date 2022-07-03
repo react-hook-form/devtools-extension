@@ -1,5 +1,5 @@
-import { ExtensionMessageResponse } from '../typings/extension-message';
-import { MessageData } from '../typings/webpage-message';
+import type { ExtensionMessageResponse } from '../typings/extension-message';
+import type { MessageData } from '../typings/webpage-message';
 
 export const postExtensionMessage = (message: MessageData) =>
   chrome.runtime

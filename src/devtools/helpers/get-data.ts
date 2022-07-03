@@ -1,5 +1,5 @@
 import { sendExtensionOneTimeMessage } from '../../services/extension';
-import { UpdatePayload } from '../../typings/webpage-message';
+import type { UpdatePayload } from '../../typings/webpage-message';
 import { useEffect, useState } from 'react';
 
 export function useGetData() {

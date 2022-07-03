@@ -28,5 +28,6 @@ module.exports = {
       'error',
       { ignoreRestSiblings: true },
     ],
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 };

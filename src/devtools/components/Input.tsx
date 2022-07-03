@@ -1,5 +1,5 @@
 import styles from '../styles/Input.module.css';
-import React from 'react';
+import type React from 'react';
 
 interface InputProps {
   placeholder: string;

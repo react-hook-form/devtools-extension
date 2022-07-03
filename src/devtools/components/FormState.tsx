@@ -1,7 +1,9 @@
 import styles from '../styles/FormState.module.css';
 import Button from './Button';
-import State, { StateFields } from './State';
-import React, { useState } from 'react';
+import type { StateFields } from './State';
+import State from './State';
+import type React from 'react';
+import { useState } from 'react';
 
 const FormState: React.FC<{
   state: { isValid: boolean } & StateFields;

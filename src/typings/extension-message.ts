@@ -1,4 +1,4 @@
-import { UpdatePayload } from './webpage-message';
+import type { UpdatePayload } from './webpage-message';
 
 export type ExtensionMessageResponse = {
   'get-enable-status': { enabled: boolean };

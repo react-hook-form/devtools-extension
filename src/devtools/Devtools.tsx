@@ -5,7 +5,8 @@ import Input from './components/Input';
 import { useGetData } from './helpers/get-data';
 import styles from './styles/Devtools.module.css';
 import './styles/global.css';
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 
 const Devtools: React.FC = () => {
   const data = useGetData();

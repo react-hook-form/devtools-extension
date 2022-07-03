@@ -1,6 +1,7 @@
 import { sendExtensionOneTimeMessage } from '../services/extension';
 import styles from './Popup.module.css';
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 const Popup: React.FC = () => {
   const [enable, setEnable] = useState(false);

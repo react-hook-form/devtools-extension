@@ -1,6 +1,6 @@
 import styles from '../styles/Button.module.css';
 import clsx from 'clsx';
-import React from 'react';
+import type React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;

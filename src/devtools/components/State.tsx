@@ -1,5 +1,5 @@
 import styles from '../styles/State.module.css';
-import React from 'react';
+import type React from 'react';
 
 export type StateFields = Record<string, string | boolean | number | object>;
 

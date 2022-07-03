@@ -1,5 +1,5 @@
 import styles from '../styles/FormIdSelector.module.css';
-import React from 'react';
+import type React from 'react';
 
 interface FormIdSelectorProps {
   ids: string[];

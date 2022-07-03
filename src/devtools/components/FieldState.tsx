@@ -1,8 +1,10 @@
 import styles from '../styles/FieldState.module.css';
 import Button from './Button';
-import State, { StateFields } from './State';
+import type { StateFields } from './State';
+import State from './State';
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface FieldStateProps {
   name: string;

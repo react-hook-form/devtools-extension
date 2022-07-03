@@ -2,7 +2,7 @@ import {
   addExtensionMessageListener,
   addExtensionOneTimeMessageListener,
 } from './services/extension';
-import { UpdatePayload } from './typings/webpage-message';
+import type { UpdatePayload } from './typings/webpage-message';
 
 let enabledTab = new Set<number>();
 let tabData = new Map<number, Record<string, UpdatePayload['data']>>();

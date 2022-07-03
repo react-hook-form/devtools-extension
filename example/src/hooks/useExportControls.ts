@@ -1,7 +1,8 @@
-import { MessageData } from '../../../src/typings/webpage-message';
+import type { MessageData } from '../../../src/typings/webpage-message';
 import { useDeepCompareEffect } from 'ahooks';
 import { useEffect, useState } from 'react';
-import { Control, FieldValues, useFormState, useWatch } from 'react-hook-form';
+import type { Control, FieldValues } from 'react-hook-form';
+import { useFormState, useWatch } from 'react-hook-form';
 
 function proxyToObject<T extends Record<string, any>>(proxy: T) {
   return Reflect.ownKeys(proxy).reduce((perv, key) => {

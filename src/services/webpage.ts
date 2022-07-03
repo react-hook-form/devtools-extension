@@ -1,4 +1,4 @@
-import { MessageData } from '../typings/webpage-message';
+import type { MessageData } from '../typings/webpage-message';
 
 const MESSAGE_SOURCE = 'react-hook-form-bridge';
 
