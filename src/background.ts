@@ -23,7 +23,12 @@ chrome.tabs.onUpdated.addListener((tabId) => {
         enabledTab.add(tabId);
         chrome.action.setIcon({
           tabId,
-          path: { 16: 'images/icon16.png', 32: 'images/icon32.png' },
+          path: {
+            16: 'images/icon16.png',
+            32: 'images/icon32.png',
+            48: 'images/icon48.png',
+            128: 'images/icon128.png',
+          },
         });
         break;
       }
