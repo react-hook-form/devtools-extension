@@ -49,9 +49,7 @@ chrome.tabs.onRemoved.addListener((tabId) => removeTab(tabId));
 addExtensionOneTimeMessageListener((request, _, sendResponse) => {
   switch (request.type) {
     case 'get-enable-status': {
-      if (enabledTab.has(request.tabId)) {
-        sendResponse({ enabled: true });
-      }
+      sendResponse({ enabled: enabledTab.has(request.tabId) });
       break;
     }
     case 'get-devtool-data': {
