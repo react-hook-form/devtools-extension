@@ -3,7 +3,9 @@ import type { UpdatePayload } from '../../typings/webpage-message';
 import { useEffect, useState } from 'react';
 
 export function useGetData() {
-  const [data, setData] = useState<Record<string, UpdatePayload['data']>>({});
+  const [data, setData] = useState<
+    Record<string, UpdatePayload['data']> | undefined
+  >({});
 
   const getData = () => {
     sendExtensionOneTimeMessage(
@@ -21,5 +23,5 @@ export function useGetData() {
     return () => clearInterval(intervalId);
   }, []);
 
-  return data;
+  return data || {};
 }

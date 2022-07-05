@@ -6,6 +6,7 @@ import type { UpdatePayload } from './typings/webpage-message';
 
 let enabledTab = new Set<number>();
 let tabData = new Map<number, Record<string, UpdatePayload['data']>>();
+let pervTabUrl = new Map<number, string>();
 
 const removeTab = (tabId: number) => {
   if (enabledTab.has(tabId)) {
@@ -16,7 +17,11 @@ const removeTab = (tabId: number) => {
   }
 };
 
-chrome.tabs.onUpdated.addListener((tabId) => {
+chrome.tabs.onUpdated.addListener((tabId, _, tab) => {
+  if (pervTabUrl.get(tabId)! !== tab.url) {
+    removeTab(tabId);
+  }
+  pervTabUrl.set(tabId, tab.url!);
   addExtensionMessageListener((message) => {
     switch (message.type) {
       case 'WELCOME': {

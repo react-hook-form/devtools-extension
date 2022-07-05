@@ -16,13 +16,18 @@ const Popup: React.FC = () => {
   return (
     <div className={styles.main}>
       <div className={styles.notice}>
-        This page {enable ? 'is' : "is't"} using the development build of React
-        Hook Form. {enable ? '✅' : '❌'}
+        This page {enable ? 'is' : "is't"} using the debug mode of React Hook
+        Form. {enable ? '✅' : '❌'}
       </div>
-      {enable && (
+      {enable ? (
         <div>
           Open the developer tools, and "React Hook Form" tab will appear to the
           right.
+        </div>
+      ) : (
+        <div>
+          If your page have React Hook Form. Please press <kbd>Ctrl</kbd> +{' '}
+          <kbd>Shift</kbd> + <kbd>R</kbd> to reload the page.
         </div>
       )}
       <hr />

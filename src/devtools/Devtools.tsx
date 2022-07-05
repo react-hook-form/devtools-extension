@@ -14,6 +14,21 @@ const Devtools: React.FC = () => {
   const [formId, setFormId] = useState('');
   const [filteredFieldName, setFilteredFieldName] = useState('');
 
+  if (Object.keys(data).length === 0) {
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <h1>Oops.. No React Hook Form here!</h1>
+        <div>
+          <div>If your page have React Hook Form</div>
+          <div>
+            Please press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to
+            reload the page.
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!data[formId]) {
     return (
       <div className={styles.main}>
