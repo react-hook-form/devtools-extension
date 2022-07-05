@@ -56,12 +56,24 @@ const Devtools: React.FC = () => {
                 value: data[formId].formValues[fieldName],
                 touched: !!data[formId].formState.touchedFields[fieldName],
                 dirty: !!data[formId].formState.dirtyFields[fieldName],
+                errorType: data[formId].formState.errors[fieldName]?.type,
+                errorMessage: data[formId].formState.errors[fieldName]?.message,
               }}
             />
           ))}
       </div>
       <div>
-        <FormState state={data[formId].formState as any} />
+        <FormState
+          state={{
+            count: data[formId].formState.submitCount,
+            submitted: data[formId].formState.isSubmitted,
+            submitting: data[formId].formState.isSubmitting,
+            submitSuccessful: data[formId].formState.isSubmitSuccessful,
+            valid: data[formId].formState.isValid,
+            validating: data[formId].formState.isValidating,
+            dirty: data[formId].formState.isDirty,
+          }}
+        />
       </div>
     </div>
   );
