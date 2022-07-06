@@ -8,18 +8,21 @@ let enabledTab = new Set<number>();
 let tabData = new Map<number, Record<string, UpdatePayload['data']>>();
 let pervTabUrl = new Map<number, string>();
 
-const removeTab = (tabId: number) => {
+const cleanupCache = (tabId: number) => {
   if (enabledTab.has(tabId)) {
     enabledTab.delete(tabId);
   }
   if (tabData.has(tabId)) {
     tabData.delete(tabId);
   }
+  if (pervTabUrl.has(tabId)) {
+    pervTabUrl.delete(tabId);
+  }
 };
 
 chrome.tabs.onUpdated.addListener((tabId, _, tab) => {
   if (pervTabUrl.get(tabId)! !== tab.url) {
-    removeTab(tabId);
+    cleanupCache(tabId);
   }
   pervTabUrl.set(tabId, tab.url!);
   addExtensionMessageListener((message) => {
@@ -49,7 +52,7 @@ chrome.tabs.onUpdated.addListener((tabId, _, tab) => {
   });
 });
 
-chrome.tabs.onRemoved.addListener((tabId) => removeTab(tabId));
+chrome.tabs.onRemoved.addListener((tabId) => cleanupCache(tabId));
 
 addExtensionOneTimeMessageListener((request, _, sendResponse) => {
   switch (request.type) {
