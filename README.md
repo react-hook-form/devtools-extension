@@ -49,6 +49,7 @@ sequenceDiagram
   participant Background
   participant Devtools
   participant Popup
+  Background->>Background: Cleanup Cache
   Content Script->>Webpage: INIT
   Note left of Webpage: Browser has devtools extension
   Webpage->>Content Script: WELCOME
@@ -72,4 +73,5 @@ sequenceDiagram
     Devtools->>Background: get-devtool-data
     Background-->>Devtools: Data (Callback)
   end
+  Background->>Background: Cleanup Cache
 ```
