@@ -50,11 +50,11 @@ sequenceDiagram
   participant Devtools
   participant Popup
   Content Script->>Webpage: INIT
-  Note left of Webpage: Browser is using devtool
+  Note left of Webpage: Browser has devtools extension
   Webpage->>Content Script: WELCOME
   Content Script->>Background: WELCOME
-  Note right of Background: Webpage is using rhf
-  Note right of Background: Cache enabled tab
+  Note right of Background: Webpage has rhf
+  Background->>Background: Cache enabled tab
   par
     Popup->>Background: get-enable-status
     Background-->>Popup: Enable Status (Callback)
@@ -67,7 +67,7 @@ sequenceDiagram
     Content Script->>Background: UPDATE
     Note over Webpage,Background: Data
   end
-  Note right of Background: Cache data
+  Background->>Background: Cache data
   loop Every 100ms
     Devtools->>Background: get-devtool-data
     Background-->>Devtools: Data (Callback)
