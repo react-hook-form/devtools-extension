@@ -13,8 +13,8 @@
 npm install @hookform/devtools -D
 ```
 
-3. Add `<Devtool control={control}>` in your code
-   > This won't show devtools component anymore! Just for extension detect your form.
+3. Add `<Devtool control={control}>` in your code  
+   _This won't show devtools component anymore! Just for extension detect your form_
 4. Enjoy!
 
 ## Development
