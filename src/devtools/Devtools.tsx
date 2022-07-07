@@ -68,7 +68,7 @@ const Devtools: React.FC = () => {
       <div>
         <FormState
           state={{
-            count: data[formId].formState.submitCount,
+            submitCount: data[formId].formState.submitCount,
             submitted: data[formId].formState.isSubmitted,
             submitting: data[formId].formState.isSubmitting,
             submitSuccessful: data[formId].formState.isSubmitSuccessful,
