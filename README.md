@@ -25,23 +25,14 @@ npm install @hookform/devtools -D
 > use [pnpm](https://pnpm.io/) only
 
 ```bash
-# extension
-pnpm install
-# example website
-cd example
 pnpm install
 ```
 
-### Start
+### Run
 
-1. Start example website
+1. Run [example webpage](https://github.com/react-hook-form/devtools/tree/master/example)
 
-```bash
-cd example
-pnpm run dev
-```
-
-2. Start extension in development mode
+2. Run extension in development mode
 
 ```bash
 pnpm run dev
