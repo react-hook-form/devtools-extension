@@ -54,7 +54,7 @@ const Devtools: React.FC = () => {
               key={fieldName}
               name={fieldName}
               hasError={false}
-              isNative
+              isNative={!!data[formId].formState.nativeFields[fieldName]}
               state={{
                 value: data[formId].formValues[fieldName],
                 touched: !!data[formId].formState.touchedFields[fieldName],

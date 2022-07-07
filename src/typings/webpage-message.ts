@@ -8,6 +8,7 @@ export type UpdatePayload<
       errors: Record<keyof TFieldValues, { type?: string; message?: string }>;
       dirtyFields: Record<keyof TFieldValues, boolean>;
       touchedFields: Record<keyof TFieldValues, boolean>;
+      nativeFields: Record<keyof TFieldValues, boolean>;
       submitCount: number;
       isSubmitted: boolean;
       isSubmitting: boolean;
