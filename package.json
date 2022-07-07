@@ -8,7 +8,7 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "simple-git-hooks",
     "dev": "webpack --config webpack.dev.js --watch",
-    "build": "webpack --config webpack.prod.js",
+    "build": "rimraf dist && webpack --config webpack.prod.js",
     "clean": "rimraf dist",
     "format": "prettier --write \"**/*.{js,ts,tsx,css}\"",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
