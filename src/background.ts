@@ -6,7 +6,6 @@ import type { UpdatePayload } from './typings/webpage-message';
 
 let enabledTab = new Set<number>();
 let tabData = new Map<number, Record<string, UpdatePayload['data']>>();
-let pervTabUrl = new Map<number, string>();
 
 const cleanupCache = (tabId: number) => {
   if (enabledTab.has(tabId)) {
@@ -15,16 +14,10 @@ const cleanupCache = (tabId: number) => {
   if (tabData.has(tabId)) {
     tabData.delete(tabId);
   }
-  if (pervTabUrl.has(tabId)) {
-    pervTabUrl.delete(tabId);
-  }
 };
 
-chrome.tabs.onUpdated.addListener((tabId, _, tab) => {
-  if (pervTabUrl.get(tabId)! !== tab.url) {
-    cleanupCache(tabId);
-  }
-  pervTabUrl.set(tabId, tab.url!);
+chrome.tabs.onUpdated.addListener((tabId) => {
+  cleanupCache(tabId);
   addExtensionMessageListener((message) => {
     switch (message.type) {
       case 'WELCOME': {
