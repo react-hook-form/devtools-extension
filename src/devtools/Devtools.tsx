@@ -53,7 +53,7 @@ const Devtools: React.FC = () => {
             <FieldState
               key={fieldName}
               name={fieldName}
-              hasError={false}
+              hasError={!!data[formId].formState.errors[fieldName]?.type}
               isNative={!!data[formId].formState.nativeFields[fieldName]}
               state={{
                 value: data[formId].formValues[fieldName],
