@@ -4,6 +4,19 @@
         </a>
 </div>
 
+## Usage
+
+1. Install extension [here]()
+2. Install [devtools](https://github.com/react-hook-form/devtools) in your project
+
+```bash
+npm install @hookform/devtools -D
+```
+
+3. Add `<Devtool control={control}>` in your code
+   > This won't show devtools component anymore! Just for extension detect your form.
+4. Enjoy!
+
 ## Development
 
 ### Install
