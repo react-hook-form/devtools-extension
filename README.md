@@ -7,7 +7,7 @@
 ## Usage
 
 1. Install extension in [Chrome Web Store]()  
-   _Or build it yourself. See [Production](#production)_
+   _Or [build it yourself](#production) / download the [release](https://github.com/react-hook-form/devtools-extension/releases) file (then goto [Development Run **third step**](#run))_
 2. Install [devtools](https://github.com/react-hook-form/devtools) in your project
 
 ```bash
@@ -83,7 +83,7 @@ sequenceDiagram
 
 ## Production
 
-1. Update package and manifest version
+1. (Optional) Update package and manifest version
 
 ```bash
 pnpm run update-version -- <version>
