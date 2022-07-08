@@ -6,7 +6,8 @@
 
 ## Usage
 
-1. Install extension [here]()
+1. Install extension in [Chrome Web Store]()  
+   _Or build it yourself. See [Production](#production)_
 2. Install [devtools](https://github.com/react-hook-form/devtools) in your project
 
 ```bash
