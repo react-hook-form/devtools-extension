@@ -79,3 +79,19 @@ sequenceDiagram
   end
   Background->>Background: Cleanup Cache
 ```
+
+## Production
+
+1. Update package and manifest version
+
+```bash
+pnpm run update-version -- <version>
+```
+
+2. Build
+
+```
+pnpm run build
+```
+
+3. Production files can be found in `/dist`
