@@ -11,7 +11,8 @@
     "build": "rimraf dist && webpack --config webpack.prod.js",
     "clean": "rimraf dist",
     "format": "prettier --write \"**/*.{js,ts,tsx,css}\"",
-    "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
+    "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
+    "update-version": "node ./scripts/update-version.js"
   },
   "dependencies": {
     "clsx": "^1.1.1",
