@@ -4,6 +4,11 @@
         </a>
 </div>
 
+## Requirement
+
+- [react-hook-form](https://github.com/react-hook-form/react-hook-form) >= `7.33.1`
+- [@hookform/devtools](https://github.com/react-hook-form/devtools) >= `4.2.0`
+
 ## Usage
 
 1. Install extension in [Chrome Web Store]()  
