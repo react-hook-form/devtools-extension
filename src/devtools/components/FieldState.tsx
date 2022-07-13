@@ -32,7 +32,7 @@ const FieldState: React.FC<FieldStateProps> = ({
         <div className={styles.actions}>
           <Button
             className={clsx(styles.button, styles.collapseButton)}
-            onClick={() => setIsCollapsed((perv) => !perv)}
+            onClick={() => setIsCollapsed((prev) => !prev)}
           >
             {isCollapsed ? '+' : '-'}
           </Button>
