@@ -19,7 +19,7 @@ const FormState: React.FC<{
       )}
       <Button
         className={styles.button}
-        onClick={() => setIsCollapsed((perv) => !perv)}
+        onClick={() => setIsCollapsed((prev) => !prev)}
       >
         <span
           style={{ color: state.valid ? '#1bda2b' : '#ec5990', fontSize: 18 }}
