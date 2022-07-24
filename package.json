@@ -1,12 +1,12 @@
 {
   "name": "rhf-devtools-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/devtools.tsx",
   "author": "Justin Sun",
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "simple-git-hooks",
+    "prepare": "simple-git-hooks",
     "dev": "webpack --config webpack.dev.js --watch",
     "build": "rimraf dist && webpack --config webpack.prod.js",
     "clean": "rimraf dist",

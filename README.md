@@ -1,14 +1,9 @@
-<div align="center">
-        <a href="https://react-hook-form.com" title="React Hook Form - Simple React forms validation">
-            <img src="https://raw.githubusercontent.com/react-hook-form/react-hook-form/master/docs/logo.png" alt="React Hook Form Logo - React hook custom hook for form validation" />
-            <img src="https://user-images.githubusercontent.com/10513364/178235861-ff786497-1b0c-4095-afc5-21c49adae560.png" alt="dev tool screenshot" />
-        </a>
-</div>
+[![Logo](https://raw.githubusercontent.com/react-hook-form/react-hook-form/master/docs/logo.png)![Screenshot](https://user-images.githubusercontent.com/10513364/178235861-ff786497-1b0c-4095-afc5-21c49adae560.png)](https://react-hook-form.com)
 
 ## Requirement
 
 - [react-hook-form](https://github.com/react-hook-form/react-hook-form) >= `7.33.1`
-- [@hookform/devtools](https://github.com/react-hook-form/devtools) >= `4.2.0`
+- [@hookform/devtools](https://github.com/react-hook-form/devtools) >= `4.2.2`
 
 ## Usage
 
