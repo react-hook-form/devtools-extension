@@ -16,12 +16,16 @@ const cleanupCache = (tabId: number) => {
   }
 };
 
+chrome.webNavigation.onCommitted.addListener(({ transitionType, tabId }) => {
+  if (transitionType === 'reload') {
+    cleanupCache(tabId);
+  }
+});
+
 chrome.tabs.onUpdated.addListener((tabId) => {
-  cleanupCache(tabId);
   addExtensionMessageListener((message) => {
     switch (message.type) {
       case 'WELCOME': {
-        enabledTab.add(tabId);
         chrome.action.setIcon({
           tabId,
           path: {
@@ -31,6 +35,7 @@ chrome.tabs.onUpdated.addListener((tabId) => {
             128: 'images/icon128.png',
           },
         });
+        enabledTab.add(tabId);
         break;
       }
       case 'UPDATE': {

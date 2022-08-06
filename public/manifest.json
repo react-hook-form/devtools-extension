@@ -37,6 +37,7 @@
     "<all_urls>"
   ],
   "permissions": [
-    "tabs"
+    "tabs",
+    "webNavigation"
   ]
 }
