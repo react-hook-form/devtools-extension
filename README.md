@@ -7,7 +7,7 @@
 
 ## Usage
 
-1. Install extension in [Chrome Web Store]()  
+1. Install extension in [Chrome Web Store](https://chrome.google.com/webstore/detail/react-hook-form-developer/cangfmbpembbepmmechnanpmddndpaji)  
    _Or [build it yourself](#production) / download the [release](https://github.com/react-hook-form/devtools-extension/releases) file (then goto [Development Run **third step**](#run))_
 2. Install [devtools](https://github.com/react-hook-form/devtools) in your project
 
