@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "React Hook Form Developer Tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Hook Form developer tools to help debug forms with validation.",
   "icons": {
     "16": "images/icon16.png",
