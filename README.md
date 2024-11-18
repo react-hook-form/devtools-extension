@@ -25,7 +25,7 @@ npm install @hookform/devtools -D
 
 ### Install
 
-> **Note**
+> [!NOTE]  
 > use [pnpm](https://pnpm.io/) only
 
 ```bash
